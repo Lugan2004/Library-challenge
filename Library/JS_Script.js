@@ -27,37 +27,20 @@ const STATUS_MAP = {
     }
 }
 
-// Edit below line 
+// Select all buttons and apply grayscale filter
+const buttons = document.querySelectorAll('button');
+buttons.forEach(button => {
+    button.style.filter = 'grayscale(100%)';
+});
 
-status = selector(status)
-reserve = selector(reserve)
-checkout = selector(checkout)
-checkin = selector(checkin)
+// Select elements with class names
+const status = document.querySelector('.status');
+const reserve = document.querySelector('.reserve');
+const checkout = document.querySelector('.checkout');
+const checkin = document.querySelector('.checkin');
 
-status = selector(status)
-reserve = selector(reserve)
-checkout = selector(checkout)
-checkin = selector(checkin)
-
-status = selector(status)
-reserve = selector(reserve)
-checkout = selector(checkout)
-checkin = selector(checkin)
-
-checkin.0.color = none
-status.0.style.color = STATUS_MAP.status.color
-reserve.0 = STATUS_MAP.status.canReserver ? 'enabled' : 'disabled'
-checkout.0 = STATUS_MAP.status.canCheckout ? 'enabled' : 'disabled'
-checkin.0 = STATUS_MAP.status.canCheckIn ? 'enabled' : 'disabled'
-
-checkin.1.color = none
-status.1.style.color = STATUS_MAP.status.color
-reserve.1 = STATUS_MAP.status.canReserver ? 'enabled' : 'disabled'
-checkout.1 = STATUS_MAP.status.canCheckout ? 'enabled' : 'disabled'
-checkin.1 = STATUS_MAP.status.canCheckIn ? 'enabled' : 'disabled'
-
-checkin.2.color = none
-status.2.style.color = STATUS_MAP.status.color
-reserve.2 = STATUS_MAP.status.canReserver ? 'enabled' : 'disabled'
-checkout.2 = STATUS_MAP.status.canCheckout ? 'enabled' : 'disabled'
-checkin.2 = STATUS_MAP.status.canCheckIn ? 'enabled' : 'disabled'
+// Apply styles and status values to the elements
+status.style.color = STATUS_MAP.shelf.color;
+reserve.textContent = STATUS_MAP.shelf.canReserve ? 'enabled' : 'disabled';
+checkout.textContent = STATUS_MAP.shelf.canCheckout ? 'enabled' : 'disabled';
+checkin.textContent = STATUS_MAP.shelf.canCheckIn ? 'enabled' : 'disabled';
